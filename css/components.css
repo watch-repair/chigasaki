@@ -39,7 +39,7 @@
 }
 
 .logo__sub {
-  display: none;
+  display: block;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-normal);
@@ -145,7 +145,7 @@
   justify-content: center;
   text-align: center;
   background-color: var(--color-primary);
-  background-image: url('../images/hero.jpg');
+  background-image: url('../images/hero2.png');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -832,9 +832,6 @@
     text-align: left;
   }
 
-  .logo__sub {
-    display: block;
-  }
 }
 
 /* Desktop (1024px+) */
