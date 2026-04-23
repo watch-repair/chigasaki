@@ -1,0 +1,97 @@
+/* ============================================================
+   CSS Custom Properties (Design Tokens)
+   ============================================================ */
+
+:root {
+  /* ------------------------------------------------------------------
+     Color Palette
+     ------------------------------------------------------------------ */
+  --color-primary: #1a1a2e;
+  --color-primary-light: #2a2a4a;
+  --color-accent: #c9a961;
+  --color-accent-dark: #a88b4a;
+  --color-bg: #f5f0e8;
+  --color-bg-alt: #faf8f3;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-text-inverse: #f5f0e8;
+  --color-border: #d4cfc7;
+  --color-error: #c0392b;
+  --color-success: #27ae60;
+
+  /* ------------------------------------------------------------------
+     Typography
+     ------------------------------------------------------------------ */
+  --font-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-md: 1.125rem;     /* 18px */
+  --font-size-lg: 1.25rem;      /* 20px */
+  --font-size-xl: 1.5rem;       /* 24px */
+  --font-size-2xl: 2rem;        /* 32px */
+  --font-size-3xl: 2.5rem;      /* 40px */
+  --font-size-4xl: 3rem;        /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* ------------------------------------------------------------------
+     Spacing
+     ------------------------------------------------------------------ */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ------------------------------------------------------------------
+     Layout
+     ------------------------------------------------------------------ */
+  --container-max: 1200px;
+  --container-narrow: 768px;
+  --header-height: 64px;
+  --header-height-desktop: 80px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ------------------------------------------------------------------
+     Shadows
+     ------------------------------------------------------------------ */
+  --shadow-sm: 0 1px 2px rgba(26, 26, 46, 0.08);
+  --shadow-md: 0 4px 12px rgba(26, 26, 46, 0.1);
+  --shadow-lg: 0 8px 24px rgba(26, 26, 46, 0.12);
+
+  /* ------------------------------------------------------------------
+     Transitions
+     ------------------------------------------------------------------ */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ------------------------------------------------------------------
+   Dark mode support (future-proofing)
+   ------------------------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Not enabled by default - site uses warm vintage palette */
+  }
+}

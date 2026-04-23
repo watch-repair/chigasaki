@@ -1,0 +1,139 @@
+/* ============================================================
+   Layout & Grid System
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ------------------------------------------------------------------
+   Section Spacing
+   ------------------------------------------------------------------ */
+.section {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-3);
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header .jp-text {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  font-family: var(--font-sans);
+}
+
+/* ------------------------------------------------------------------
+   Grid
+   ------------------------------------------------------------------ */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* ------------------------------------------------------------------
+   Flex
+   ------------------------------------------------------------------ */
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* ------------------------------------------------------------------
+   Responsive Breakpoints
+   ------------------------------------------------------------------ */
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  :root {
+    --header-height: var(--header-height-desktop);
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
