@@ -364,7 +364,7 @@
             Get in Touch
             <span class="jp-text" lang="ja">お問い合わせ</span>
           </h2>
-          <p>Questions about your watch? Reach out by phone, email, or the form below.</p>
+          <p>Questions about your watch? Reach out by phone, email, or visit us directly.</p>
         </div>
 
         <div class="contact__grid">
@@ -376,30 +376,12 @@
                 <h4>Phone / <span lang="ja">お電話</span></h4>
                 <p>
                   <!-- TODO: Replace with actual phone number -->
-                  <a href="tel:+81-XXX-XXXX-XXXX" aria-label="Call us at XXX-XXXX-XXXX">
-                    +81-XXX-XXXX-XXXX
+                  <a href="tel:+81-0467-30-9011" aria-label="Call us at 0467-30-9011">
+                    +81-0467-30-9011
                   </a><br>
                   <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
                     Available during business hours
                     <span lang="ja">（営業時間内）</span>
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="contact__item">
-              <div class="contact__item-icon" aria-hidden="true">&#9993;&#65039;</div>
-              <div class="contact__item-body">
-                <h4>Email / <span lang="ja">メール</span></h4>
-                <p>
-                  <!-- TODO: Replace with actual email address -->
-                  <a href="mailto:info@kawabata-watch.example.com" aria-label="Send us an email">
-                    info@kawabata-watch.example.com
-                  </a><br>
-                  <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">
-                    Replies within 2 business days
-                    <span lang="ja">（2営業日以内に返信）</span>
                   </span>
                 </p>
               </div>
@@ -418,102 +400,16 @@
             </div>
           </div>
 
-          <!-- Contact Form -->
-          <form
-            class="form"
-            action="#"
-            method="post"
-            aria-describedby="form-note"
-            novalidate
-          >
-            <p id="form-note" class="form__hint" style="margin-bottom: var(--space-5); padding: var(--space-3); background-color: var(--color-bg); border-radius: var(--radius-sm);">
-              <strong>Note:</strong> This form requires a backend integration to send messages. It currently provides HTML5 validation only.
-              <span lang="ja">※ このフォームは送信機能を実装するにはバックエンド連携が必要です。現在はHTML5のバリデーションのみ提供しています。</span>
-            </p>
-
-            <div class="form__group">
-              <label for="contact-name" class="form__label">
-                Name / <span lang="ja">お名前</span>
-                <span class="required" aria-hidden="true">*</span>
-              </label>
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                class="form__input"
-                placeholder="Your name / お名前"
-                required
-                autocomplete="name"
-                aria-required="true"
-              >
-            </div>
-
-            <div class="form__group">
-              <label for="contact-email" class="form__label">
-                Email / <span lang="ja">メールアドレス</span>
-                <span class="required" aria-hidden="true">*</span>
-              </label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                class="form__input"
-                placeholder="your@email.com"
-                required
-                autocomplete="email"
-                aria-required="true"
-              >
-            </div>
-
-            <div class="form__group">
-              <label for="contact-phone" class="form__label">
-                Phone <span lang="ja">（電話番号）</span>
-              </label>
-              <input
-                type="tel"
-                id="contact-phone"
-                name="phone"
-                class="form__input"
-                placeholder="+81-XX-XXXX-XXXX"
-                autocomplete="tel"
-              >
-            </div>
-
-            <div class="form__group">
-              <label for="contact-watch" class="form__label">
-                Watch Model / <span lang="ja">時計の型番・ブランド</span>
-              </label>
-              <input
-                type="text"
-                id="contact-watch"
-                name="watch_model"
-                class="form__input"
-                placeholder="e.g., Seiko Quartz 4004, Citizen Crystron..."
-              >
-            </div>
-
-            <div class="form__group">
-              <label for="contact-message" class="form__label">
-                Message / <span lang="ja">お問い合わせ内容</span>
-                <span class="required" aria-hidden="true">*</span>
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
-                class="form__textarea"
-                placeholder="Please describe the issue or inquiry... / 症状やご質問をお書きください..."
-                required
-                aria-required="true"
-                minlength="10"
-              ></textarea>
-            </div>
-
-            <div class="form__actions">
-              <button type="submit" class="btn btn--primary">
-                Send Message / <span lang="ja">送信する</span>
-              </button>
-            </div>
-          </form>
+          <figure class="contact__image">
+            <img
+              src="images/yamada-chigasaki.jpg"
+              alt="Exterior of Yamada Denki LABI LIFE SELECT Chigasaki store"
+              width="600"
+              height="700"
+              loading="lazy"
+            >
+            <figcaption class="sr-only">Yamada Denki LABI LIFE SELECT Chigasaki</figcaption>
+          </figure>
         </div>
       </div>
     </section>
