@@ -1,0 +1,4 @@
+# NOTE: Replace https://watch-repair.github.io/chigasaki/ with your actual domain before deploying.
+User-agent: *
+Allow: /
+Sitemap: https://watch-repair.github.io/chigasaki/sitemap.xml
