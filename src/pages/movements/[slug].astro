@@ -21,7 +21,20 @@ const { entry } = Astro.props;
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://chigasaki.repairwatch.workers.dev';
 
 const rawHtml = entry.rendered?.html ?? '';
-const enhancedHtml = rawHtml.replace(
+
+// Auto-detect Japanese content and add lang="ja" to block-level elements
+const jpPattern = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/;
+const langHtml = rawHtml.replace(
+  /<(p|li|h3|h4)([^>]*)>([\s\S]*?)<\/\1>/g,
+  (match, tag, attrs, inner) => {
+    if (jpPattern.test(inner) && !attrs.includes('lang=')) {
+      return `<${tag}${attrs} lang="ja">${inner}</${tag}>`;
+    }
+    return match;
+  }
+);
+
+const enhancedHtml = langHtml.replace(
   /(<h2[^>]*>Repair Notes.*?<\/h2>)([\s\S]*?)(?=(<h2>|$))/,
   '<div class="movement-highlight">$1$2</div>'
 );
