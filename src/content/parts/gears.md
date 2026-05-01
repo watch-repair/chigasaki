@@ -22,4 +22,4 @@ Gears (wheels and pinions) form the gear train that transfers power from the ste
 
 Worn gear teeth cause hand slippage or stuttering. Cannon pinion tension must be correct—too loose and the minute hand slips; too tight and setting becomes difficult. Replacement gears must match the exact module and tooth count.
 
-摩耗した歯は針の滑りやカクツキを引き起こします。カノンのテンションは適正である必要があり、緩すぎると分針が滑り、硬すぎると時刻合わせが困難になります。交換用ギアは、正確なモジュールと歯数が一致している必要があります。
+摩耗した歯は針の滑りやカクツキを引き起こします。カノンのテンションは適正である必要があり、緩すぎると分針が滑り、硬すぎると時刻合わせが困難になります。交換用のギアは、正確なモジュールと歯数が一致している必要があり、ドナー献体が必要になる場合がございます。

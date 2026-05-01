@@ -21,4 +21,4 @@ The dial (face) is the visible "face" of the watch, displaying hour markers, num
 
 Vintage dials often suffer from water damage, discoloration, or lifted indices. Refinishing can restore appearance but may reduce collector value. When removing hands, always use proper levers to avoid scratching the dial surface.
 
-ヴィンテージの文字盤は、水濡れによるダメージ、変色、浮き上がったインデックスがよく見られます。再仕上げは外観を回復させますが、コレクター価値を下げる可能性があります。針を外す際は、必ず専用のレバーを使用し、文字盤面を傷つけないようにしてください。
+ヴィンテージの文字盤は、水濡れによるダメージ、変色、浮き上がったインデックスがよく見られます。再仕上げは外観を回復させますが、コレクター価値を下げる可能性があり、ヴィンテージ時計特有の風味として残す場合もございます。また、針を外す際は、必ず専用のレバーを使用し、文字盤面を傷つけないようにする必要があります。

@@ -26,4 +26,4 @@ The step motor converts the electrical pulses from the IC circuit into mechanica
 
 Coil resistance should be measured with a multimeter (typically 1.5–3 kΩ). If the coil is open, replacement is necessary. Some vintage coils can be rewound, but modern coils are usually replaced as an assembly.
 
-コイル抵抗はマルチメーターで測定してください（一般的に1.5～3kΩ）。コイルが開路の場合、交換が必要です。一部のヴィンテージコイルは巻き直しが可能ですが、現代のコイルは通常アセンブリごと交換します。
+コイル抵抗はマルチメーターで測定し（一般的に1.5～3kΩ）、コイルが開路の場合、交換が必要です。一部のヴィンテージコイルは巻き直しが可能ですが、現代のコイルは通常アセンブリごと交換になる場合がございます。

@@ -21,4 +21,4 @@ The battery is the power source of every quartz watch. Most analog quartz watche
 
 Always use the exact battery code specified by the manufacturer. Incorrect voltage can damage the IC circuit. After replacement, check for proper resealing and water resistance.
 
-メーカーが指定した正確な電池コードを使用してください。電圧が合わないとIC回路を損傷する恐れがあります。交換後は、適切なシール状態と防水性を確認してください。
+メーカーが指定した正確な電池コードを使用する必要があり、電圧が合わないとIC回路を損傷する恐れがあります。交換後は、適切な保護状態と防水性を確保することが推奨されます。

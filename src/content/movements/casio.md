@@ -22,4 +22,4 @@ Casio Computer Co., Ltd. brought electronic innovation to wristwatches with the 
 
 Casio modules often use proprietary coils and LCD panels that are model-specific. Module replacement is frequently more practical than component-level repair. G-SHOCK gaskets and bezel springs should be replaced during battery service.
 
-カシオのモジュールは、モデル固有の専用コイルやLCDパネルを使用していることが多く、部品レベルの修理よりモジュール交換の方が現実的な場合があります。G-SHOCKのガスケットやベゼルスプリングは、電池交換時に同時交換することをお勧めします。
+カシオのモジュールは、モデル固有の専用コイルやLCDパネルを使用していることが多く、部品レベルの修理よりモジュール交換の方が現実的な場合があります。ガスケットやベゼルスプリングは、必要に応じて電池交換時に同時交換することをお勧めします。

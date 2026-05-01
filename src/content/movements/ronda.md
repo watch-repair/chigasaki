@@ -20,6 +20,6 @@ Ronda AG is a leading Swiss manufacturer specializing exclusively in quartz move
 
 ## Repair Notes / 修理時の注意点
 
-Ronda movements are designed for serviceability, with standardized battery types (364, 371, 377) and clearly marked coil assemblies. Their technical sheets provide detailed coil resistance values, aiding diagnostics.
+Ronda movements are designed for serviceability, with standardized battery types (364, 371, 377) and clearly marked coil assemblies. 
 
-ロンダのムーブメントはメンテナンス性を考慮して設計されており、標準化された電池タイプ（364、371、377）と明確に印字されたコイルアセンブリが特徴です。技術資料にはコイル抵抗値の詳細が記載されており、診断に役立ちます。
+ロンダのムーブメントはメンテナンス性を考慮して設計されており、標準化された電池タイプ（364、371、377）と明確に印字されたコイルアセンブリが特徴です。
