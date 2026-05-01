@@ -1075,24 +1075,6 @@
   margin-bottom: var(--space-2);
 }
 
-.movement-highlight {
-  margin-top: var(--space-12);
-  padding: var(--space-6);
-  background-color: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  border-left: 4px solid var(--color-accent);
-}
-
-.movement-highlight h2 {
-  margin-top: 0;
-  border-bottom-color: var(--color-accent-dark);
-}
-
-.movement-highlight p:last-child {
-  margin-bottom: 0;
-}
-
 /* Japanese content visual distinction */
 .movement-content :is(p, h3, h4):lang(ja) {
   padding-left: var(--space-4);

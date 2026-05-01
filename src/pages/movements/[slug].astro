@@ -34,10 +34,7 @@ const langHtml = rawHtml.replace(
   }
 );
 
-const enhancedHtml = langHtml.replace(
-  /(<h2[^>]*>Repair Notes.*?<\/h2>)([\s\S]*?)(?=(<h2>|$))/,
-  '<div class="movement-highlight">$1$2</div>'
-);
+const enhancedHtml = langHtml;
 
 const title = `${entry.data.title} Movement | Kawabata's Vintage Quartz Watch Repair`;
 const description = entry.data.description;
