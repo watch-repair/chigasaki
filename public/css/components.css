@@ -1163,6 +1163,23 @@
   border-left: 3px solid var(--color-accent);
 }
 
+/* ------------------------------------------------------------------
+   Parts Hero Image
+   ------------------------------------------------------------------ */
+.parts-hero-image {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+}
+
+.parts-hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
   .hero__title {
