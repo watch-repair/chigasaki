@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const parts = await getCollection('parts');
+  return parts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+type Props = {
+  entry: CollectionEntry<'parts'>;
+};
+
+const { entry } = Astro.props;
+
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://chigasaki.repairwatch.workers.dev';
+
+const title = `${entry.data.title} | Quartz Watch Parts | Kawabata's Vintage Quartz Watch Repair`;
+const description = entry.data.description;
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Parts", "item": `${siteUrl}/parts/` },
+      { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": `${siteUrl}/parts/${entry.id}/` }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": entry.data.title,
+    "description": entry.data.description,
+    "url": `${siteUrl}/parts/${entry.id}/`,
+    "author": { "@type": "Organization", "name": "Kawabata's Vintage Quartz Watch Repair" }
+  }
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData}>
+  <Header />
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/parts/">Parts</a></li>
+          <li class="breadcrumb__item" aria-current="page"><span>{entry.data.title}</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="part-heading">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <h2 id="part-heading">
+            {entry.data.title}
+            <span class="jp-text" lang="ja">{entry.data.category === 'part' ? 'パーツ' : entry.data.category}</span>
+          </h2>
+        </div>
+
+        <div class="about__content">
+          <div set:html={entry.rendered?.html} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

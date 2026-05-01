@@ -1,72 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="茅ヶ崎の川端時計修理は、ヴィンテージクォーツ時計の専門修理工房。セイコー、シチズン、カシオ、オリエントなど日本製時計の電池交換、ムーブメント洗浄、リューズ修理、防水パッキン交換、メタルバンド調整に対応。山田電機LABI LIFE SELECT茅ヶ崎店内。茅ヶ崎駅東口徒歩5分。Kawabata's Vintage Quartz Watch Repair in Chigasaki, Kanagawa.">
-  <meta name="keywords" content="茅ヶ崎,時計修理,クォーツ時計,ヴィンテージ時計,電池交換,セイコー,シチズン,カシオ,オリエント,山田電機,ムーブメント洗浄,防水パッキン,バンド交換,vintage watch repair,quartz watch repair,Chigasaki,Seiko,Citizen,Casio,watch restoration">
-  <meta name="author" content="Kawabata's Vintage Quartz Watch Repair">
-  <meta name="theme-color" content="#1a1a2e">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="canonical" href="https://watch-repair.github.io/chigasaki/">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFRNLR25JE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+const siteUrl = 'https://chigasaki.repairwatch.workers.dev';
 
-    gtag('config', 'G-EFRNLR25JE');
-  </script>
-
-  <title>Kawabata's Vintage Quartz Watch Repair | Chigasaki, Japan</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Kawabata's Vintage Quartz Watch Repair | 茅ヶ崎のヴィンテージ時計修理専門店">
-  <meta property="og:description" content="茅ヶ崎で20年以上の実績。セイコー、シチズン、カシオなど日本製ヴィンテージクォーツ時計の修理・電池交換・オーバーホール。山田電機LABI LIFE SELECT茅ヶ崎店内。Expert vintage quartz watch repair in Chigasaki.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://watch-repair.github.io/chigasaki/">
-  <meta property="og:image" content="https://watch-repair.github.io/chigasaki/images/hero.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:locale:alternate" content="en_US">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kawabata's Vintage Quartz Watch Repair | 茅ヶ崎のヴィンテージ時計修理">
-  <meta name="twitter:description" content="セイコー・シチズン・カシオなど日本製ヴィンテージクォーツ時計の専門修理。電池交換からオーバーホールまで。茅ヶ崎駅東口徒歩5分。Expert repair for vintage Seiko, Citizen, Casio quartz watches.">
-  <meta name="twitter:image" content="https://watch-repair.github.io/chigasaki/images/hero.png">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-
-  <!-- Favicon placeholder -->
-  <!-- <link rel="icon" type="image/svg+xml" href="images/favicon.svg"> -->
-
-  <!-- ============================================================ -->
-  <!-- Structured Data (JSON-LD) for SEO & AIO                      -->
-  <!-- ============================================================ -->
-
-  <!-- LocalBusiness -->
-  <script type="application/ld+json">
+const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Kawabata's Vintage Quartz Watch Repair",
     "alternateName": "川端ヴィンテージクォーツ時計修理",
     "image": [
-      "https://watch-repair.github.io/chigasaki/images/hero.png",
-      "https://watch-repair.github.io/chigasaki/images/craftman.png",
-      "https://watch-repair.github.io/chigasaki/images/yamada-chigasaki.jpg"
+      `${siteUrl}/images/hero.png`,
+      `${siteUrl}/images/craftman.png`,
+      `${siteUrl}/images/yamada-chigasaki.jpg`
     ],
-    "@id": "https://watch-repair.github.io/chigasaki/#business",
-    "url": "https://watch-repair.github.io/chigasaki/",
+    "@id": `${siteUrl}/#business`,
+    "url": siteUrl,
     "telephone": "+81-0467-30-9011",
     "priceRange": "¥¥",
     "currenciesAccepted": "JPY",
@@ -113,31 +64,23 @@
     "sameAs": [
       "https://x.com/lls_chigasaki"
     ]
-  }
-  </script>
-
-  <!-- WebSite -->
-  <script type="application/ld+json">
+  },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Kawabata's Vintage Quartz Watch Repair",
     "alternateName": "川端ヴィンテージクォーツ時計修理",
-    "url": "https://watch-repair.github.io/chigasaki/",
+    "url": siteUrl,
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://watch-repair.github.io/chigasaki/?q={search_term_string}"
+        "urlTemplate": `${siteUrl}/?q={search_term_string}`
       },
       "query-input": "required name=search_term_string"
     },
     "inLanguage": ["ja", "en"]
-  }
-  </script>
-
-  <!-- BreadcrumbList -->
-  <script type="application/ld+json">
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -146,69 +89,19 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://watch-repair.github.io/chigasaki/"
+        "item": siteUrl
       }
     ]
   }
-  </script>
-</head>
-<body>
+];
+---
 
-  <!-- Skip Navigation Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<BaseLayout structuredData={structuredData}>
+  <Header />
 
-  <!-- ============================================================ -->
-  <!-- Header / Navigation                                           -->
-  <!-- ============================================================ -->
-  <header class="header" id="main-header">
-    <div class="container header__inner">
-      <a href="#" class="logo" aria-label="Kawabata's Vintage Quartz Watch Repair - Home">
-        Kawabata's
-        <span class="logo__sub">Vintage Quartz Watch Repair</span>
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="main-nav"
-        type="button"
-      >
-        <span class="menu-toggle__bar" aria-hidden="true"></span>
-        <span class="menu-toggle__bar" aria-hidden="true"></span>
-        <span class="menu-toggle__bar" aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav" id="main-nav" aria-label="Main navigation">
-        <a href="#about" class="nav__link">
-          About
-          <span class="jp-text" lang="ja">店舗紹介</span>
-        </a>
-        <a href="#services" class="nav__link">
-          Services
-          <span class="jp-text" lang="ja">サービス</span>
-        </a>
-        <a href="#location" class="nav__link">
-          Location
-          <span class="jp-text" lang="ja">アクセス</span>
-        </a>
-        <a href="#contact" class="nav__link">
-          Contact
-          <span class="jp-text" lang="ja">お問い合わせ</span>
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ============================================================ -->
-  <!-- Main Content                                                  -->
-  <!-- ============================================================ -->
   <main id="main-content">
 
-    <!-- ========================================================== -->
-    <!-- Breadcrumb Navigation                                      -->
-    <!-- ========================================================== -->
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
         <ol class="breadcrumb__list">
@@ -219,9 +112,7 @@
       </div>
     </nav>
 
-    <!-- ========================================================== -->
-    <!-- Hero Section                                               -->
-    <!-- ========================================================== -->
+    <!-- Hero Section -->
     <section class="hero" aria-label="Hero">
       <div class="hero__texture" aria-hidden="true"></div>
       <div class="hero__content">
@@ -241,16 +132,13 @@
       </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- About Section                                              -->
-    <!-- ========================================================== -->
+    <!-- About Section -->
     <section class="section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="about__grid">
           <figure class="about__image">
-            <!-- TODO: Replace with actual shop or craftsman photo -->
             <img
-              src="images/craftman.png"
+              src="/images/craftman.png"
               alt="A watchmaker carefully examining a vintage quartz watch movement under magnification"
               width="600"
               height="700"
@@ -282,9 +170,7 @@
       </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- Services Section                                           -->
-    <!-- ========================================================== -->
+    <!-- Services Section -->
     <section class="section section-alt" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header">
@@ -395,9 +281,7 @@
       </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- Location Section                                           -->
-    <!-- ========================================================== -->
+    <!-- Location Section -->
     <section class="section" id="location" aria-labelledby="location-heading">
       <div class="container">
         <div class="section-header">
@@ -418,7 +302,6 @@
               </h3>
               <address>
                 Yamada Denki LABI LIFE SELECT Chigasaki<br>
-                <!-- TODO: Update with exact floor/section when confirmed -->
                 <strong>1F South Watch Repair Counter</strong><br>
                 Chigasaki, Kanagawa Prefecture, Japan<br>
                 <span lang="ja">山田電機 LABI LIFE SELECT 茅ヶ崎店<br>1F 南 時計修理フロア</span>
@@ -474,9 +357,7 @@
       </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- FAQ Section                                                -->
-    <!-- ========================================================== -->
+    <!-- FAQ Section -->
     <section class="section" id="faq" aria-labelledby="faq-heading">
       <div class="container container-narrow">
         <div class="section-header">
@@ -575,9 +456,7 @@
       </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- Contact Section                                            -->
-    <!-- ========================================================== -->
+    <!-- Contact Section -->
     <section class="section section-alt" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
@@ -596,7 +475,6 @@
               <div class="contact__item-body">
                 <h4>Phone / <span lang="ja">お電話</span></h4>
                 <p>
-                  <!-- TODO: Replace with actual phone number -->
                   <a href="tel:+81-0467-30-9011" aria-label="Call us at 0467-30-9011">
                     +81-0467-30-9011
                   </a><br>
@@ -644,7 +522,7 @@
 
           <figure class="contact__image">
             <img
-              src="images/yamada-chigasaki.jpg"
+              src="/images/yamada-chigasaki.jpg"
               alt="Exterior of Yamada Denki LABI LIFE SELECT Chigasaki store"
               width="600"
               height="700"
@@ -658,67 +536,5 @@
 
   </main>
 
-  <!-- ============================================================ -->
-  <!-- Back to Top Button                                            -->
-  <!-- ============================================================ -->
-  <button
-    class="back-to-top"
-    id="back-to-top"
-    aria-label="Back to top / ページ上部へ戻る"
-    type="button"
-  >
-    <span aria-hidden="true">&#8593;</span>
-  </button>
-
-  <!-- ============================================================ -->
-  <!-- Footer                                                        -->
-  <!-- ============================================================ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <p class="logo">Kawabata's</p>
-          <p>
-            Preserving the legacy of Japanese quartz watchmaking, one timepiece at a time.
-            <span lang="ja">日本のクォーツ時計の伝統を、一つ一つの時計で守り続けます。</span>
-          </p>
-        </div>
-
-        <nav class="footer__nav" aria-label="Footer navigation">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="#about">About / <span lang="ja">店舗紹介</span></a></li>
-            <li><a href="#services">Services / <span lang="ja">サービス</span></a></li>
-            <li><a href="#location">Location / <span lang="ja">アクセス</span></a></li>
-            <li><a href="#contact">Contact / <span lang="ja">お問い合わせ</span></a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer__nav" aria-label="Language switcher">
-          <h4>Language</h4>
-          <ul>
-            <li><a href="/" aria-current="page">English</a></li>
-            <li><a href="/ja/">Japanese / <span lang="ja">日本語</span></a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="footer__bottom">
-        <p>&copy; <span id="year"></span> Kawabata's Vintage Quartz Watch Repair. All rights reserved.</p>
-        <p>
-          Located inside Yamada Denki LABI LIFE SELECT Chigasaki
-          <span lang="ja">山田電機 LABI LIFE SELECT 茅ヶ崎店内</span>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/menu.js"></script>
-  <script>
-    // Dynamic year for copyright
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+  <Footer />
+</BaseLayout>

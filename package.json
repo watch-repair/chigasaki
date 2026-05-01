@@ -1,0 +1,23 @@
+{
+  "name": "chigasaki",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "wrangler pages deploy dist --project-name=chigasaki --branch=main"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.3.0",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.87.0"
+  }
+}

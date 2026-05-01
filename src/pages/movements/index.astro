@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const movements = await getCollection('movements');
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://chigasaki.repairwatch.workers.dev';
+
+const title = "Quartz Movement Makers | Kawabata's Vintage Quartz Watch Repair";
+const description = "クォーツ時計のムーブメントメーカー紹介。ミヨタ、シチズン、セイコー、カシオ、ETA、ロンダなど主要メーカーの技術と修理情報を解説します。";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Movements", "item": `${siteUrl}/movements/` }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData}>
+  <Header />
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item" aria-current="page"><span>Movements</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="movements-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="movements-heading">
+            Quartz Movement Makers
+            <span class="jp-text" lang="ja">クォーツムーブメントメーカー</span>
+          </h2>
+          <p>Major manufacturers of quartz watch movements and their key technologies.</p>
+        </div>
+
+        <div class="grid grid-3">
+          {movements.map((m) => (
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">&#8986;</div>
+              <h3 class="card__title">
+                <a href={`/movements/${m.slug}/`}>{m.data.title}</a>
+                <span class="jp-text" lang="ja">{m.data.country}</span>
+              </h3>
+              <p class="card__text">{m.data.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

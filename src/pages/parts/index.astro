@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const parts = await getCollection('parts');
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://chigasaki.repairwatch.workers.dev';
+
+const title = "Quartz Watch Parts | Kawabata's Vintage Quartz Watch Repair";
+const description = "クォーツ時計のパーツ解説。バッテリー、水晶振動子、IC回路、ステップモーター、ギア、文字盤など、主要部品の構造と修理情報を紹介します。";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Parts", "item": `${siteUrl}/parts/` }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData}>
+  <Header />
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item" aria-current="page"><span>Parts</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="parts-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="parts-heading">
+            Quartz Watch Parts
+            <span class="jp-text" lang="ja">クォーツ時計のパーツ</span>
+          </h2>
+          <p>Essential components of a quartz watch movement and repair guidance.</p>
+        </div>
+
+        <div class="grid grid-3">
+          {parts.map((p) => (
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">&#9874;</div>
+              <h3 class="card__title">
+                <a href={`/parts/${p.slug}/`}>{p.data.title}</a>
+              </h3>
+              <p class="card__text">{p.data.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

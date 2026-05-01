@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chigasaki.repairwatch.workers.dev/sitemap-index.xml

@@ -1,0 +1,64 @@
+---
+const footerNav = [
+  { href: '/#about', label: 'About', sub: '店舗紹介' },
+  { href: '/#services', label: 'Services', sub: 'サービス' },
+  { href: '/movements/', label: 'Movements', sub: 'ムーブメント' },
+  { href: '/parts/', label: 'Parts', sub: 'パーツ' },
+  { href: '/#location', label: 'Location', sub: 'アクセス' },
+  { href: '/#contact', label: 'Contact', sub: 'お問い合わせ' },
+];
+---
+
+<!-- Back to Top Button -->
+<button
+  class="back-to-top"
+  id="back-to-top"
+  aria-label="Back to top / ページ上部へ戻る"
+  type="button"
+>
+  <span aria-hidden="true">&#8593;</span>
+</button>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="logo">Kawabata's</p>
+        <p>
+          Preserving the legacy of Japanese quartz watchmaking, one timepiece at a time.
+          <span lang="ja">日本のクォーツ時計の伝統を、一つ一つの時計で守り続けます。</span>
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <h4>Navigate</h4>
+        <ul>
+          {footerNav.map((item) => (
+            <li>
+              <a href={item.href}>
+                {item.label} / <span lang="ja">{item.sub}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav class="footer__nav" aria-label="Language switcher">
+        <h4>Language</h4>
+        <ul>
+          <li><a href="/" aria-current="page">English</a></li>
+          <li><a href="/ja/">Japanese / <span lang="ja">日本語</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Kawabata's Vintage Quartz Watch Repair. All rights reserved.</p>
+      <p>
+        Located inside Yamada Denki LABI LIFE SELECT Chigasaki
+        <span lang="ja">山田電機 LABI LIFE SELECT 茅ヶ崎店内</span>
+      </p>
+    </div>
+  </div>
+</footer>

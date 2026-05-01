@@ -1,0 +1,45 @@
+---
+const navItems = [
+  { href: '/#about', label: 'About', sub: '店舗紹介' },
+  { href: '/#services', label: 'Services', sub: 'サービス' },
+  { href: '/movements/', label: 'Movements', sub: 'ムーブメント' },
+  { href: '/parts/', label: 'Parts', sub: 'パーツ' },
+  { href: '/#location', label: 'Location', sub: 'アクセス' },
+  { href: '/#contact', label: 'Contact', sub: 'お問い合わせ' },
+];
+---
+
+<!-- Skip Navigation Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header / Navigation -->
+<header class="header" id="main-header">
+  <div class="container header__inner">
+    <a href="/" class="logo" aria-label="Kawabata's Vintage Quartz Watch Repair - Home">
+      Kawabata's
+      <span class="logo__sub">Vintage Quartz Watch Repair</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      type="button"
+    >
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      {navItems.map((item) => (
+        <a href={item.href} class="nav__link">
+          {item.label}
+          <span class="jp-text" lang="ja">{item.sub}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
