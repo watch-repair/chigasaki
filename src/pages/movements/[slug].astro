@@ -18,8 +18,13 @@ type Props = {
 
 const { entry } = Astro.props;
 
-
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://chigasaki.repairwatch.workers.dev';
+
+const rawHtml = entry.rendered?.html ?? '';
+const enhancedHtml = rawHtml.replace(
+  /(<h2[^>]*>Repair Notes.*?<\/h2>)([\s\S]*?)(?=(<h2>|$))/,
+  '<div class="movement-highlight">$1$2</div>'
+);
 
 const title = `${entry.data.title} Movement | Kawabata's Vintage Quartz Watch Repair`;
 const description = entry.data.description;
@@ -63,14 +68,24 @@ const structuredData = [
     <section class="section" aria-labelledby="movement-heading">
       <div class="container container-narrow">
         <div class="section-header">
-          <h2 id="movement-heading">
-            {entry.data.title}
-            <span class="jp-text" lang="ja">{entry.data.country} / Founded {entry.data.founded}</span>
-          </h2>
+          <h2 id="movement-heading">{entry.data.title}</h2>
+
+          <div class="movement-meta">
+            <span class="movement-meta__badge">
+              <span aria-hidden="true">📍</span>
+              {entry.data.country}
+            </span>
+            <span class="movement-meta__badge">
+              <span aria-hidden="true">📅</span>
+              Founded {entry.data.founded}
+            </span>
+          </div>
+
+          <p class="movement-lead">{entry.data.description}</p>
         </div>
 
-        <div class="about__content">
-          <div set:html={entry.rendered?.html} />
+        <div class="movement-content">
+          <div set:html={enhancedHtml} />
         </div>
       </div>
     </section>
