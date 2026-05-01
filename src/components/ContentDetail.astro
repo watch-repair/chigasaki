@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  structuredData: object[];
+  breadcrumb: Array<{ label: string; href?: string }>;
+  headingId: string;
+}
+
+const { title, description, structuredData, breadcrumb, headingId } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} structuredData={structuredData}>
+  <Header />
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          {breadcrumb.map((item, index) => (
+            <li class="breadcrumb__item">
+              {item.href ? (
+                <a href={item.href}>{item.label}</a>
+              ) : (
+                <span aria-current={index === breadcrumb.length - 1 ? 'page' : undefined}>
+                  {item.label}
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby={headingId}>
+      <div class="container container-narrow">
+        <div class="section-header">
+          <h2 id={headingId}>
+            <slot name="heading" />
+          </h2>
+
+          {Astro.slots.has('meta') && (
+            <div class="content-meta">
+              <slot name="meta" />
+            </div>
+          )}
+
+          <slot name="lead" />
+        </div>
+
+        <div class="content-body">
+          <slot />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

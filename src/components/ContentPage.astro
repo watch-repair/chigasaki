@@ -1,0 +1,31 @@
+---
+import ContentDetail from './ContentDetail.astro';
+import { getSiteUrl, createDetailPageContext } from '../utils/content';
+import type { ContentEntryLike } from '../utils/content';
+
+export interface Props {
+  entry: ContentEntryLike;
+  collection: 'movements' | 'parts';
+  bodyClass?: string;
+}
+
+const { entry, collection, bodyClass } = Astro.props;
+const siteUrl = getSiteUrl(Astro.site);
+const ctx = createDetailPageContext(entry, collection, siteUrl);
+---
+
+<ContentDetail
+  title={ctx.title}
+  description={ctx.description}
+  structuredData={ctx.structuredData}
+  breadcrumb={ctx.breadcrumb}
+  headingId={ctx.headingId}
+>
+  <slot name="heading" slot="heading" />
+  <slot name="meta" slot="meta" />
+  <slot name="lead" slot="lead" />
+
+  <div class={bodyClass}>
+    <div set:html={ctx.enhancedHtml} />
+  </div>
+</ContentDetail>
