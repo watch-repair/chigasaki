@@ -68,11 +68,9 @@ npm run deploy   # wrangler pages deploy
 ```
 
 ### Auto Deploy
-Pushing to `main` branch triggers GitHub Actions workflow (`.github/workflows/deploy.yml`).
+Pushing to `main` branch triggers a build and deploy via Cloudflare Pages' built-in Git integration.
 
-Required GitHub Secrets:
-- `CLOUDFLARE_API_TOKEN`
-- `CLOUDFLARE_ACCOUNT_ID`
+No GitHub Secrets are required; deployment is handled entirely by Cloudflare.
 
 ## Adding New Content
 
