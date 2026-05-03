@@ -6,7 +6,7 @@
 	"pages_build_output_dir": "dist/client",
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS"
+		"binding": "STATIC_ASSETS"
 	},
 	"observability": {
 		"enabled": true
